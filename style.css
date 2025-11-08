@@ -1,0 +1,279 @@
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(
+    circle at 48% 38%,
+    #361957 8%,
+    #eaa0fd 35%,
+    #ffcfcf 100%
+  );
+  animation: bgmove 13s ease-in-out infinite alternate;
+  font-family: "Segoe Script", "Brush Script MT", cursive, sans-serif;
+  position: relative;
+}
+@keyframes bgmove {
+  from {
+    background-position: 54% 32%;
+  }
+  to {
+    background-position: 47% 44%;
+  }
+}
+.gold-msg {
+  position: absolute;
+  left: 50%;
+  top: 19vh;
+  width: 90vw;
+  text-align: center;
+  font-size: 2.6em;
+  color: #ffefac;
+  font-weight: bold;
+  letter-spacing: 1.1px;
+  text-shadow: 0 0 12px #fff9d1, 0 0 34px #fcc279, 0 0 15px #fff0ea;
+  transform: translateX(-50%) scale(0.7);
+  opacity: 0;
+  animation: appear 1.2s ease forwards 1s;
+  z-index: 8;
+  font-family: "Brush Script MT", "Segoe Script", cursive, sans-serif;
+}
+@keyframes appear {
+  0% {
+    transform: translateX(-50%) scale(0.7);
+    opacity: 0;
+  }
+  70% {
+    transform: translateX(-50%) scale(1.16);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+  }
+}
+.cake-holder {
+  position: absolute;
+  left: 50%;
+  top: 40vh;
+  transform: translate(-50%, 0);
+  z-index: 15;
+  width: 270px;
+  height: 230px;
+}
+.cake-body {
+  position: absolute;
+  left: 20px;
+  top: 70px;
+  width: 232px;
+  height: 85px;
+  background: radial-gradient(circle at 50% 0, #ffe6ab 60%, #fccb7f 100%);
+  border-radius: 60px 60px 100px 100px;
+  box-shadow: 0 10px 36px #faad54bb;
+  border-bottom: 9px solid #f6ad55;
+}
+.cake-icing {
+  position: absolute;
+  left: 36px;
+  top: 56px;
+  width: 170px;
+  height: 52px;
+  background: linear-gradient(135deg, #fff2c2 70%, #e18efd 100%);
+  border-radius: 42px 42px 22px 22px;
+  border-bottom: 4px solid #fccb7f;
+  z-index: 1;
+}
+.cake-base {
+  position: absolute;
+  left: 0;
+  top: 114px;
+  width: 270px;
+  height: 38px;
+  background: #f5cf9e;
+  border-radius: 0 0 68px 68px;
+  box-shadow: 0 12px 32px #ffdfa92a;
+  z-index: 0;
+}
+/* Candles */
+.candle {
+  position: absolute;
+  width: 16px;
+  height: 50px;
+  top: 16px;
+  border-radius: 6px;
+  z-index: 2;
+  background: #66d9ed;
+  border: 2px solid #fff6f6;
+  left: 60px;
+}
+.candle:nth-child(2) {
+  left: 110px;
+  background: #f784b4;
+}
+.candle:nth-child(3) {
+  left: 164px;
+  background: #ffe16a;
+}
+.flame {
+  position: absolute;
+  left: 4px;
+  top: -14px;
+  width: 8px;
+  height: 18px;
+  background: radial-gradient(
+    ellipse at center,
+    #fffbe9 30%,
+    #ffe37f 80%,
+    #fd69ff 100%
+  );
+  border-radius: 70% 40% 60% 60% / 100% 100% 20% 20%;
+  animation: candleFlicker 0.9s infinite alternate;
+  box-shadow: 0 0 18px #fffedd;
+  z-index: 12;
+  opacity: 0.96;
+}
+@keyframes candleFlicker {
+  0% {
+    opacity: 0.85;
+    transform: scaleY(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1.17);
+  }
+}
+.cake-glow {
+  position: absolute;
+  left: 50%;
+  top: 195px;
+  width: 162px;
+  height: 88px;
+  background: radial-gradient(ellipse at center, #ffe7bd 30%, #ffb0f87a 95%);
+  border-radius: 49%;
+  filter: blur(18px);
+  opacity: 0.66;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+/* Falling rose styling and animation */
+.rose-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+.rose-item {
+  position: absolute;
+  width: 50px;
+  height: 68px;
+  animation: roseFallBg 6s linear infinite;
+}
+@keyframes roseFallBg {
+  from {
+    top: -80px;
+  }
+  to {
+    top: 100vh;
+  }
+}
+.rose-item svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 16px #f2b7d1);
+}
+/* Falling heart styling and animation */
+.heart-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+.heart-item {
+  position: absolute;
+  width: 36px;
+  height: 32px;
+  animation: heartFallBg 5.2s linear infinite;
+}
+@keyframes heartFallBg {
+  from {
+    top: -50px;
+  }
+  to {
+    top: 100vh;
+  }
+}
+.heart-item svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 8px #fff6f9);
+}
+/* Balloon styling and animation */
+.balloon-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+.balloon-item {
+  position: absolute;
+  width: 38px;
+  height: 60px;
+  animation: balloonRise 7.2s ease-in-out infinite;
+}
+@keyframes balloonRise {
+  from {
+    top: 110vh;
+  }
+  to {
+    top: -80px;
+  }
+}
+.balloon-item svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 26px #fff6e5);
+}
+/* Sparkles */
+.sparkle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.7;
+  animation: sparkle-move 7s linear infinite;
+  background: radial-gradient(
+    circle,
+    #fffbe5 60%,
+    #fad7ff 90%,
+    transparent 100%
+  );
+  z-index: 1;
+}
+@keyframes sparkle-move {
+  to {
+    transform: translateY(130vh) scale(1.05);
+    opacity: 0;
+  }
+}
+/* Fireworks */
+.firework {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  opacity: 0.73;
+  z-index: 25;
+  pointer-events: none;
+  animation: pop 1.1s linear forwards;
+}
+@keyframes pop {
+  0% {
+    transform: scale(0.22);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
